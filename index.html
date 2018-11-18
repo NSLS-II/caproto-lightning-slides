@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Caproto Slides</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -24,8 +24,68 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+                    <p>Caproto</p>
+                    <a href="https://nsls-ii.github.io/caproto">nsls-ii.github.io/caproto</a>
+                    <p>a distrubted hardware control side-project<br />by Dan Allan, Ken Lauer, Thomas Caswell</p>
+                </section>
+                <section>
+                    <p>EPICS:<br />Experimental Physics and Industrial Control System</p>
+                    <ul>
+                        <li>Wire protocol called "Channel Access"</li>
+                        <li>Support libraries for distributed hardware control</li>
+						<li>Reference implementation is C/C++
+						<ul>
+							<li>180K lines of code</li>
+							<li>Runs on <em>everything</em></li>
+						</ul>
+                    </ul>
+				</section>
+				<section>
+                    <p>EPICS:<br />Experimental Physics and Industrial Control System</p>
+                    <ul>
+                        <li>Started in the 1980s (copyrights of 1986 in the codebase) at Los Alamos</li>
+						<li>Used to control large-scale experimental facilities
+							<ul>
+								<li>National Synchrotron Light Source II</li>
+								<li>LIGO (gravity waves!)</li>
+								<li>telescopes, nuclear reactors, accelerators, industry</li>
+							</ul></li>
+                    </ul>
+				</section>
+				<section>
+					<p>Sans I/O &mdash; <a href="https://sans-io.readthedocs.io">sans-io.readthedocs.io</a></p>
+					<ul>
+						<li>Separate implementation of network protocol rules from pushing bits around</li>
+						<li>Have a core state machine that enforces the rules</li>
+						<li>You hand it bits from the wire and it gives you back nice python objects that mean something</li>
+                        <li>You hand it nice python objects and hands you back the bits to push over the wire</li>
+						<li>Cory Benfield, Brett Cannon, Nathaniel Smith</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>Caproto = CA + proto
+                    <ul>
+                        <li>Pure python (3.6+) implementation of CA protocol</li>
+                        <li>Have server implementations for<br />{asyncio, curio, trio}</li>
+                        <li>Have client implementations for {threads, sync}</li>
+                        <li>Runs on:
+                            <ul>
+                                <li>Your desktop</li>
+                                <li>Your laptop</li>
+                                <li>Your raspberry pi</li>
+                                <li>Your phone</li>
+                                <li>Scales down to hobbyist-scale projects</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <p>Try it!</p>
+                    <p><code>python -m pip install caproto</code></p>
+                    <p>Examples for RaspberryPi and iOS:</p>
+                    <p><a href="https://github.com/caproto">github.com/caproto</a></p>
+                </section>
 			</div>
 		</div>
 
